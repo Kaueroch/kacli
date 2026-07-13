@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - kacli
+    restart: unless-stopped
+
+  kacli:
+    build:
+      context: ./kacli
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=kacli_user
+      - DB_PASS=kacli_pass
+      - DB_NAME=kacli_db
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: kacli_user
+      POSTGRES_PASSWORD: kacli_pass
+      POSTGRES_DB: kacli_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
