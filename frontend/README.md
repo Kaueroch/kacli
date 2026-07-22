@@ -1,16 +1,34 @@
-# React + Vite
+# 🎨 KaWeb Front-end
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Este é o front-end do projeto **KaWeb**, que servirá como a interface principal da plataforma (Knowledge OS).
+O foco atual do projeto está no desenvolvimento do back-end em Java Puro. O front-end, assim como a Landing Page, será desenvolvido **apenas quando as funcionalidades do back-end estiverem prontas e funcionando perfeitamente**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Visão do Produto e Design
 
-## React Compiler
+Quando o momento de focar no front-end chegar, o objetivo será:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Landing Page Impactante:** Criar um site que "exalte o conhecimento", apresentando claramente o propósito do KaWeb. Deverá contar com uma *Waitlist*, listagem de funcionalidades, possíveis planos futuros (mini SaaS) e uma seção de contato.
+- **Design Moderno:** Utilizar referências sofisticadas (como o [Cosmic by Shadcn UI](https://cosmic.shadcnuikit.com/) ou similares) para uma interface limpa, premium e voltada à conversão e excelente experiência do usuário.
+- **Comunicação com o Back-end:** Toda a integração será feita consumindo as APIs REST construídas nativamente no back-end Java.
+- **Dashboard de Leitura:** Interface visual para gerenciar as leituras, interagir com artigos da comunidade e acompanhar a evolução dos estudos (integrado aos dados do Obsidian do usuário).
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 🛠️ Tecnologias Base
+
+O projeto foi inicializado utilizando:
+- **React + Vite**
+- Conexão nativa com a API Java rodando no mesmo ambiente (via Docker).
+
+## 🚀 Como Executar
+
+Para iniciar o servidor de desenvolvimento localmente (quando houver implementação e for o foco da etapa):
+
+```bash
+npm install
+npm run dev
+```
+
+*(Lembrando: você também pode rodar toda a stack com o `docker-compose` na raiz do repositório).*
